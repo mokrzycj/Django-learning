@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Profil Specjalisty: {{ specialist.user.username }}</h2>
+<h3>Dostępność</h3>
+{% if availabilities %}
+<ul>
+    {% for availability in availabilities %}
+    <li>{{ availability.start_time }} do {{ availability.end_time }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Brak dostępnych terminów.</p>
+{% endif %}
+
+<h3>Opinie</h3>
+{% if reviews %}
+<ul>
+    {% for review in reviews %}
+    <li>Ocena: {{ review.rating }} - {{ review.comment }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Brak opinii.</p>
+{% endif %}
+{% endblock %}

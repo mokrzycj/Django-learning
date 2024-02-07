@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Reviews</h2>
+<ul>
+    {% for review in reviews %}
+    <li>Rating: {{ review.rating }} - "{{ review.comment }}" by {{ review.patient.user.username }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

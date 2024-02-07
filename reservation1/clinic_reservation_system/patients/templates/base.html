@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clinic Reservation System</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% comment %} <li><a href="{% url 'index' %}">Home</a></li> {% endcomment %}
+                <!-- Dodaj linki do logowania, rejestracji itp. -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- Przykładowy szablon -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista Specjalistów</h2>
+<form method="get">
+    <input type="text" name="q" placeholder="Szukaj...">
+    <button type="submit">Szukaj</button>
+</form>
+{% if specialists %}
+<ul>
+    {% for specialist in specialists %}
+    <li>{{ specialist.user.username }} - {{ specialist.specialization }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Brak dostępnych specjalistów.</p>
+{% endif %}
+{% endblock %}

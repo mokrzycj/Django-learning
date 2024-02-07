@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Clinic Specialists</h2>
+<ul>
+    {% for specialist in specialists %}
+    <li>{{ specialist.user.username }} - {{ specialist.specialty }} <a href="{% url 'remove_specialist_from_clinic' specialist.id %}">Remove</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

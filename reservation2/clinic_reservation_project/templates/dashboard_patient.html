@@ -1,0 +1,15 @@
+<!-- Przykładowy szablon -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard Pacjenta</h2>
+{% if appointments %}
+<ul>
+    {% for appointment in appointments %}
+    <li>{{ appointment.date }} z {{ appointment.specialist.user.username }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Brak umówionych wizyt.</p>
+{% endif %}
+{% endblock %}

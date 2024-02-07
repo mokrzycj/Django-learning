@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dostępne terminy na dzień {{ search_date }}</h2>
+{% if availabilities %}
+<ul>
+    {% for availability in availabilities %}
+    <li>{{ availability.start_time }} - {{ availability.end_time }} z {{ availability.specialist.user.username }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Brak dostępnych terminów.</p>
+{% endif %}
+{% endblock %}

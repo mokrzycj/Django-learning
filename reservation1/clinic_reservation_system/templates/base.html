@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Clinic Appointments</h2>
+<ul>
+    {% for appointment in appointments %}
+    <li>{{ appointment.date_time }} with {{ appointment.patient.user.username }} - {{ appointment.status }} <a href="{% url 'cancel_appointment_by_clinic' appointment.id %}">Cancel</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
